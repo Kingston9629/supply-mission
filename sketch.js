@@ -31,7 +31,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:3, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.6, isStatic:false});
 	World.add(world, packageBody);
 	
 
@@ -59,7 +59,9 @@ function keyPressed() {
 
 	Matter.Body.setStatic(packageBody,false)
     packageBody_options ={
-		restitution: 0.1
+		'restitution':0.1,
+        'friction':0.3,
+        'density':1.0
 	}
 	 }
 
